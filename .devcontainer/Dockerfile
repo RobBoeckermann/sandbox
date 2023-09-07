@@ -8,3 +8,7 @@ RUN apt update && \
     cmake \
     libgtest-dev \
     && apt clean
+
+
+RUN git config --global user.email "robboeckermann@gmail.com"
+RUN git config --global user.name "Rob Boeckermann"
