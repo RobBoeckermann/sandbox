@@ -5,11 +5,42 @@
             "label": "build",
             "type": "shell",
             "command": "make",
-            "args": ["${fileBasenameNoExtension}"],
+            "args": [
+                "build",
+                "SRC=${relativeFile}"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "run",
+                "SRC=${relativeFile}"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"],
             "presentation": {
                 "reveal": "always",
                 "panel": "new"

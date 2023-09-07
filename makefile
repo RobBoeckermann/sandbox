@@ -1,15 +1,21 @@
 CC = g++
-CPPFLAGS = -g -Wall
-SRCDIR = cpp
+CPPFLAGS = -g -Wall -std=c++17
+INCLUDES = -I/usr/include/gtest
+LDFLAGS = -lgtest -lgtest_main
 
-
-SRCS = $(wildcard $(SRCDIR)/*.cpp)
-EXECS = $(patsubst $(SRCDIR)/%.cpp,%,$(SRCS))
+SRCS := $(shell find . -type f -name '*.cpp')
+EXECS = $(patsubst %.cpp,%,$(SRCS))
 
 all: $(EXECS)
 
-$(EXECS): %: $(SRCDIR)/%.cpp
-	$(CC) $(CPPFLAGS) -o $(SRCDIR)/$@ $<
+$(EXECS): %: %.cpp
+	$(CC) $(CPPFLAGS) -o $@ $< $(INCLUDES) $(LDFLAGS)
+
+
+build: $(SRC:.cpp=)
+
+run: $(SRC:.cpp=)
+	./$(SRC:.cpp=)
 
 clean:
-	$(RM) $(SRCDIR)/$(EXECS)
+	$(RM) $(EXECS)

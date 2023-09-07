@@ -6,4 +6,5 @@ RUN apt update && \
     gdb \
     g++ \
     cmake \
+    libgtest-dev \
     && apt clean
