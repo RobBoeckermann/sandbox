@@ -7,7 +7,8 @@
             "command": "make",
             "args": [
                 "build",
-                "SRC=${relativeFile}"],
+                "SRC=${relativeFile}"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -24,7 +25,8 @@
             "command": "make",
             "args": [
                 "run",
-                "SRC=${relativeFile}"],
+                "SRC=${relativeFile}"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -33,14 +35,15 @@
                 "reveal": "always",
                 "panel": "new"
             },
-            "problemMatcher": "$gcc"
+            "problemMatcher": []
         },
         {
             "label": "clean",
             "type": "shell",
             "command": "make",
             "args": [
-                "clean"],
+                "clean"
+            ],
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
